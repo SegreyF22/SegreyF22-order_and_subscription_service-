@@ -13,7 +13,7 @@ class SubscriptionCheckMiddleware:
                 try:
                     subscription = UserSubscription.objects.get(user=request.user)
                     if not subscription.active:
-                        return JsonResponse({'error': 'Необходимо оформить подписку'}, status=403)
+                        return JsonResponse({'error': 'Необходимо продлить подписку'}, status=403)
                 except UserSubscription.DoesNotExist:
                     return JsonResponse({'error': 'Подписка отсутствует'}, status=403)
         return self.get_response(request)

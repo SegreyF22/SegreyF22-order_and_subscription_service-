@@ -24,7 +24,7 @@ class Tariff(models.Model):
         verbose_name_plural = 'Тарифы'
 
     def __str__(self):
-        return f'Название тарифа {self.name}'
+        return f'Название тарифа: {self.name}'
 
 
 class UserSubscription(models.Model):
@@ -36,4 +36,7 @@ class UserSubscription(models.Model):
         db_table = 'user_subscriptions'
         verbose_name = 'Подписка'
         verbose_name_plural = 'Подписки'
+
+    def __str__(self):
+        return f'Подписка пользователя: {self.user}'
 

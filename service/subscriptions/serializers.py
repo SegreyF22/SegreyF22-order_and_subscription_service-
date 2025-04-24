@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from models import Tariff, UserSubscription, CustomUser
+from .models import Tariff, UserSubscription, CustomUser
 
 class TariffSerializer(serializers.ModelSerializer):
     class Meta:
