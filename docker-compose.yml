@@ -26,3 +26,17 @@ services:
       - POSTGRES_USER=dbuser
       - POSTGRES_PASSWORD=pass
       - POSTGRES_PORT=5432
+
+  telega-bot:
+    build: .
+    command: python bot.py
+    depends_on:
+      - web-app
+      - database
+    environment:
+      - TELEGRAM_TOKEN=8083153363:AAFLITTlPQayAY98yx724nxKaGu1844dx4A
+      - DB_HOST=database
+      - DB_NAME=dbname
+      - DB_USER=dbuser
+      - DB_PASSWORD=pass
+      - DB_PORT=5432
